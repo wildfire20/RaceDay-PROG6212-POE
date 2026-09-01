@@ -1,0 +1,46 @@
+name: RaceDay Part 1 Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-part1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check docs folder
+        run: |
+          test -d docs
+          echo "docs folder found"
+
+      - name: Check ERD
+        run: |
+          test -f docs/RaceDay_ERD.png
+          echo "RaceDay ERD found"
+
+      - name: Check API endpoint plan
+        run: |
+          test -f docs/API_Endpoint_Plan.md
+          echo "API endpoint plan found"
+
+      - name: Check SQL database script
+        run: |
+          test -f docs/RaceDay_Database.sql
+          echo "SQL database script found"
+
+      - name: Check README
+        run: |
+          test -f README.md
+          echo "README found"
+
+      - name: Check references
+        run: |
+          test -f docs/References.md
+          echo "References file found"
+
+      - name: Part 1 structure validated
+        run: echo "RaceDay Part 1 repository structure is valid."
