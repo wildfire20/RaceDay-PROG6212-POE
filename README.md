@@ -1,115 +1,66 @@
 # RaceDay
 
-RaceDay is a web-based event management system designed for South African road running, walking, and cycling events.
+RaceDay is a web-based event management system for running, walking and cycling events in South Africa.
 
-The system allows Organisers to create and manage sporting events, event categories, participant enrolments, and race results. Participants can create accounts, browse available events, enrol in an event by selecting a category, manage their personal information, and view their race results.
+The idea behind the system is to give Organisers an easier way to manage events, categories, enrolments and race results. Participants will also be able to create accounts, browse events, enter events and keep track of their results.
 
-The RaceDay project is developed progressively across three parts:
-
-- Part 1: System Planning and Database
-- Part 2: RESTful API Development
-- Part 3: ASP.NET Core MVC Web Application
-
-## User Roles
-
-### Organiser
-
-An Organiser can:
-
-- Create, edit, and delete events.
-- Manage categories for events.
-- View Participants who have enrolled in their events.
-- View the selected category and enrolment status of Participants.
-- Capture and publish race finish times and finishing positions.
-- Upload an event banner image.
-
-### Participant
-
-A Participant can:
-
-- Register and log in to the system.
-- Browse upcoming events.
-- View complete event information and available categories.
-- Enrol in an event and select a category.
-- View their previous and current enrolments.
-- View their personal race results.
-- View and update their profile information.
-- Upload a profile picture.
+This project is completed in three parts. Part 1 focuses on planning the system and designing the database before any API code is written.
 
 ## Part 1 - System Planning and Database
 
-# RaceDay
+For Part 1, I planned the structure of RaceDay and created the database that will be used later in the project.
 
-RaceDay is a web-based event management system designed for South African road running, walking, and cycling events.
-
-The system allows Organisers to create and manage events, categories, participant enrolments, and race results. Participants can register, browse events, enrol in categories, manage their profiles, and view their results.
-
-This Portfolio of Evidence is developed progressively across three parts.
-
-- Part 1: System Planning and Database
-- Part 2: RESTful API Development
-- Part 3: ASP.NET Core MVC Web Application
-
----
-
-# Part 1 - System Planning and Database
-
-Part 1 focuses on planning the RaceDay system before the API is implemented.
-
-The Part 1 submission includes:
+The main work completed in this part includes:
 
 - Entity Relationship Diagram (ERD)
-- REST API Endpoint Plan
-- SQL Server Database Script
-- Realistic Sample Data
+- REST API endpoint plan
+- SQL Server database script
+- Sample data
+- GitHub version control
 - GitHub Actions CI/CD workflow
 - References
-- Video Presentation
-
----
 
 ## User Roles
 
+RaceDay has two user roles: Organiser and Participant.
+
 ### Organiser
 
-The Organiser role is responsible for managing RaceDay events.
+The Organiser is responsible for managing events.
 
-An Organiser can:
+An Organiser will be able to:
 
 - Create events
-- Edit events
-- Delete events
-- Manage event categories
-- View Participant enrolments
-- View selected Participant categories
+- Edit and delete events
+- Add categories to events
+- View Participants who have enrolled
+- View the category selected by each Participant
 - Update enrolment statuses
-- Capture Participant finish times
+- Capture finish times
 - Capture finishing positions
 - Publish race results
 
 ### Participant
 
-The Participant role is used by people entering RaceDay events.
+The Participant is the person taking part in an event.
 
-A Participant can:
+A Participant will be able to:
 
 - Register for an account
-- Log in to the system
+- Log in
 - Browse available events
-- View event information
+- View event details
 - Select an event category
 - Enrol in an event
 - View their enrolments
-- View their personal results
-- View and update their profile
+- View their results
+- View and update their profile information
 
----
+## Database
 
-## Database Design
+The RaceDay database was created using SQL Server.
 
-The RaceDay database is implemented using SQL Server.
-
-The database contains six main entities:
+The database contains six main tables:
 
 1. Users
 2. Events
@@ -118,135 +69,119 @@ The database contains six main entities:
 5. Enrolments
 6. Results
 
-The database design uses primary keys, foreign keys, unique constraints, check constraints, default values, and required fields to maintain data integrity.
+Primary keys and foreign keys are used to connect the tables.
 
-The `EventCategories` entity resolves the many-to-many relationship between Events and Categories.
+I also used constraints such as `NOT NULL`, `UNIQUE`, `CHECK` and `DEFAULT` where they were needed.
 
-The `Results` table uses a unique `EnrolmentId` so that one enrolment can have a maximum of one result.
+The `EventCategories` table is used to connect Events and Categories because an event can have more than one category and a category can also be used for more than one event.
 
----
+The `Results` table uses a unique `EnrolmentId`. This means one enrolment can only have one result.
 
 ## Entity Relationship Diagram
 
-The RaceDay ERD is stored in:
+The ERD for RaceDay is stored in:
 
-`/docs/RaceDay_ERD.png`
+`docs/RaceDay_ERD.png`
 
-The ERD shows all six entities, their attributes, primary keys, foreign keys, and relationship cardinalities.
-
----
+The diagram shows the six database entities, their attributes, primary keys, foreign keys and the relationships between them.
 
 ## API Endpoint Plan
 
-The REST API endpoint plan is stored in:
+The planned REST API endpoints are stored in:
 
-`/docs/API_Endpoint_Plan.md`
+`docs/API_Endpoint_Plan.md`
 
-The plan covers:
+The endpoint plan covers:
 
 - Authentication
-- User Profile
+- User profiles
 - Events
 - Categories
-- Event Enrolments
+- Event enrolments
 - Results
 
-Each planned endpoint includes:
+For each endpoint, I included the HTTP method, route, description, required role, request body and expected response.
 
-- HTTP Method
-- Route
-- Description
-- Required Role
-- Request Body
-- Expected Response
+No API code is written in Part 1. The endpoint plan will be used when the API is developed later.
 
----
+## SQL Script
 
-## SQL Database Script
+The SQL Server script is stored in:
 
-The SQL Server database script is stored in:
+`docs/RaceDay_Database.sql`
 
-`/docs/RaceDay_Database.sql`
+The script creates the `RaceDayDB` database and all six tables.
 
-The script:
-
-- Creates the RaceDayDB database
-- Creates all six database tables
-- Defines primary keys
-- Defines foreign keys
-- Defines constraints
-- Adds realistic sample data
-- Can be executed from the beginning on a clean SQL Server instance
-
-The script was tested successfully using SQL Server Management Studio.
-
-Sample data includes:
+It also adds realistic sample data, including:
 
 - 2 Organisers
 - 2 Participants
 - 3 Events
 - 5 Categories
-- Event category assignments
-- Sample enrolments
+- Event category records
+- Participant enrolments
 - Sample results
 
----
+The full script was tested in SQL Server Management Studio and ran successfully.
 
-## Running the Database Script
+## Running the Database
+
+To run the database:
 
 1. Open SQL Server Management Studio.
 2. Connect to the SQL Server instance.
-3. Open the `RaceDay_Database.sql` file.
-4. Execute the full SQL script.
+3. Open `RaceDay_Database.sql`.
+4. Run the full script.
 5. Refresh the Databases folder.
-6. Confirm that `RaceDayDB` has been created.
-7. Expand the Tables folder and confirm that all six RaceDay tables are present.
+6. Open `RaceDayDB`.
+7. Check the Tables folder to confirm that all six tables were created.
 
----
+## GitHub and CI/CD
 
-## CI/CD
+Git was used throughout Part 1 to keep track of the work completed on the project.
 
-A GitHub Actions workflow is included in:
+The GitHub Actions workflow is stored in:
 
 `.github/workflows/validate-part1.yml`
 
-The workflow validates that the required Part 1 files and folders are present in the repository.
+The workflow checks that the important Part 1 files are present in the repository.
+
+The workflow has been tested successfully on GitHub Actions and completed with a green build.
 
 ### CI/CD Screenshot
 
-A screenshot of the successful GitHub Actions green build will be added once access to the official GitHub repository is available.
+A screenshot of the successful GitHub Actions workflow is included in the project documentation.
 
----
+If the screenshot is saved as `docs/CI_CD_Green_Build.png`, it can also be displayed here:
+
+![RaceDay Part 1 CI/CD Green Build](docs/CI_CD_Green_Build.png)
 
 ## References
 
-All sources used during planning and development are recorded in:
+The sources I used while researching and completing Part 1 are listed in:
 
-`/docs/References.md`
+`docs/References.md`
 
----
+These include documentation and tutorials used for the ERD, SQL Server, REST API planning and GitHub Actions.
 
 ## Video Presentation
 
-The Part 1 presentation video will demonstrate:
+The Part 1 video will show and explain:
 
-- RaceDay system planning
-- ERD design
-- Entity relationships
-- API endpoint planning
-- SQL database design
-- Running the SQL script in SQL Server Management Studio
-- GitHub repository structure
-- Successful CI/CD workflow
+- The RaceDay ERD
+- The database relationships
+- The API endpoint plan
+- The SQL database design
+- Running the SQL script in SSMS
+- The GitHub repository
+- The successful GitHub Actions workflow
 
 YouTube Video Link:
 
 `To be added after recording`
 
----
-
 ## AI Tool Disclosure
 
-AI tools were used to assist with planning, concept explanation, proofreading, and troubleshooting during the development process.
+AI tools were used during the project to help with planning, explaining unfamiliar concepts, proofreading and troubleshooting.
 
-All final design decisions, implementation, testing, and evaluation of the work were reviewed by the student.
+The final project structure, database design, testing and submitted work were reviewed by me before submission.
