@@ -1,75 +1,39 @@
-# RaceDay References
+# References
 
-This document records the sources consulted during the planning and development of the RaceDay system.
+These are the main sources I used while planning and building Part 1 of RaceDay.
 
-References will be added throughout the project as technologies, concepts, and implementation approaches are researched.
+## ERD and Database Design
 
-# RaceDay References
+Mermaid. Entity Relationship Diagrams.
+https://mermaid.js.org/syntax/entityRelationshipDiagram.html
 
-This document records the sources consulted during the planning and development of the RaceDay system.
+Decomplexify. Entity Relationship Diagrams. YouTube, 2024.
+https://www.youtube.com/watch?v=LowjDtiNlk4
 
-## Part 1 - System Planning and Database
+Microsoft Learn. Create tables (Database Engine) - SQL Server.
+https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-tables-database-engine
 
-### Entity Relationship Diagram
+Microsoft Learn. Create Foreign Key Relationships - SQL Server.
+https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships
 
-Mermaid. Entity Relationship Diagrams. Mermaid Documentation.
+Microsoft Learn. Unique constraints and check constraints - SQL Server.
+https://learn.microsoft.com/en-us/sql/relational-databases/tables/unique-constraints-and-check-constraints
 
-Used to understand Crow's Foot notation, entity relationships, cardinality, and the use of PK, FK and UK markers in the RaceDay ERD.
+## REST API Planning
 
-### REST API Endpoint Planning
+MDN Web Docs. HTTP request methods.
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
 
-Microsoft. Controller action return types in ASP.NET Core Web API. Microsoft Learn.
+MDN Web Docs. HTTP response status codes.
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 
-Used to research common API responses and HTTP status codes such as 200 OK, 400 Bad Request and 404 Not Found.
+Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube, 2022.
+https://www.youtube.com/watch?v=XLQxfpDmqbM
 
-### SQL Server Database Design
+## GitHub and CI/CD
 
-Microsoft. Create a Database - SQL Server. Microsoft Learn.
+GitHub Docs. Workflow syntax for GitHub Actions.
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 
-Used to research creating the RaceDayDB database in SQL Server.
-
-Microsoft. Create tables (Database Engine) - SQL Server. Microsoft Learn.
-
-Used to research table creation and SQL Server table structure.
-
-Microsoft. Create Foreign Key Relationships - SQL Server. Microsoft Learn.
-
-Used to research how foreign keys are used to connect related tables.
-
-Microsoft. Unique constraints and check constraints - SQL Server. Microsoft Learn.
-
-Used to research UNIQUE constraints and CHECK constraints for enforcing data integrity.
-
-Microsoft. CREATE TABLE (Transact-SQL) - SQL Server. Microsoft Learn.
-
-Used as a reference for CREATE TABLE syntax and table-level constraints.
-
-### GitHub and CI/CD
-
-GitHub. Workflow syntax for GitHub Actions. GitHub Docs.
-
-Used to research the YAML structure and location of GitHub Actions workflow files.
-
-GitHub. Quickstart for GitHub Actions. GitHub Docs.
-
-Used to understand how GitHub Actions workflows are triggered and how successful workflow runs are viewed.
-
-## Part 2 - RESTful API Development
-
-References used for:
-
-- ASP.NET Core Web API
-- Entity Framework Core
-- Authentication
-- Role-based access
-- Swagger/OpenAPI
-- Unit testing
-
-## Part 3 - MVC Web Application
-
-References used for:
-
-- ASP.NET Core MVC
-- Azure Blob Storage
-- Docker
-- Bootstrap
+GitHub Docs. Quickstart for GitHub Actions.
+https://docs.github.com/en/actions/get-started/quickstart
