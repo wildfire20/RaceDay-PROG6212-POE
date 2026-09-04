@@ -1,11 +1,10 @@
 # RaceDay REST API Endpoint Plan
 
-This document defines the REST API endpoints planned for the RaceDay system.
+This document outlines the REST API endpoints planned for the RaceDay system.
 
-The API will be implemented in Part 2 using ASP.NET Core Web API. The endpoint plan has been designed around the two RaceDay user roles: Organiser and Participant.
+The endpoints are based on the main functions required for the Organiser and Participant roles. The plan includes the HTTP method, route, required role, request data and the responses that can be returned.
 
-The API uses standard HTTP methods such as GET, POST, PUT, and DELETE. Appropriate HTTP status codes are included for successful and unsuccessful requests.
-
+The API itself will be developed in Part 2. No API code is written in Part 1.
 ## Role Definitions
 
 - **Public** - The endpoint can be accessed without logging in.

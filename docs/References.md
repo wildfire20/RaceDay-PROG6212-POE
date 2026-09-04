@@ -37,3 +37,6 @@ https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-synt
 
 GitHub Docs. Quickstart for GitHub Actions.
 https://docs.github.com/en/actions/get-started/quickstart
+
+Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube.
+https://www.youtube.com/watch?v=XLQxfpDmqbM

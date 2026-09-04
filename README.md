@@ -35,7 +35,7 @@ An Organiser will be able to:
 - Add categories to events
 - View Participants who have enrolled
 - View the category selected by each Participant
-- Update enrolment statuses
+- View enrolment statuses
 - Capture finish times
 - Capture finishing positions
 - Publish race results
@@ -185,3 +185,4 @@ YouTube Video Link:
 AI tools were used during the project to help with planning, explaining unfamiliar concepts, proofreading and troubleshooting.
 
 The final project structure, database design, testing and submitted work were reviewed by me before submission.
+

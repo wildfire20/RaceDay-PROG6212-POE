@@ -132,7 +132,11 @@ CREATE TABLE Enrolments
         REFERENCES EventCategories(EventCategoryId),
 
     CONSTRAINT CK_Enrolments_Status
-        CHECK (Status IN ('Pending', 'Confirmed', 'Cancelled'))
+    CHECK (Status IN ('Pending', 'Confirmed', 'Cancelled')),
+
+CONSTRAINT UQ_Enrolments_Participant_EventCategory
+    UNIQUE (ParticipantId, EventCategoryId)
+
 );
 GO
 
