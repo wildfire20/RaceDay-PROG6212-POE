@@ -27,7 +27,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
 MDN Web Docs. HTTP response status codes.
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 
-Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes.... YouTube, 2022.
+Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes....... YouTube, 2022.
 https://www.youtube.com/watch?v=XLQxfpDmqbM
 
 ## GitHub and CI/CD...

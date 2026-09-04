@@ -18,7 +18,7 @@ The API itself will be developed in Part 2. No API code is written in Part 1.
 |---|---|---|---|---|---|
 | POST | `/api/auth/register` | Creates a new RaceDay user account as either an Organiser or Participant. | Public | `{ "firstName": "string", "lastName": "string", "email": "string", "password": "string", "role": "Organiser or Participant", "phoneNumber": "string" }` | `201 Created` - account created. `400 Bad Request` - invalid details. `409 Conflict` - email already registered. |
 | POST | `/api/auth/login` | Authenticates a registered user and creates their authenticated session. | Public | `{ "email": "string", "password": "string" }` | `200 OK` - login successful. `400 Bad Request` - invalid request. `401 Unauthorized` - incorrect credentials. |
-| POST | `/api/auth/logout` | Ends the authenticated user's current session. | Any Authenticated User | None | `200 OK` - logout successful. `401 Unauthorized` - user is not authenticated. |
+| POST | `/api/auth/logout` | Ends the authenticated user's current session. | Any ...Authenticated User | None | `200 OK` - logout successful. `401 Unauthorized` - user is not authenticated. |
 
 ## 2. User Profile Endpoints
 

@@ -178,11 +178,29 @@ The Part 1 video will show and explain:
 
 YouTube Video Link:
 
-`To be added after recording`
+https://youtu.be/YI4MqQKTz7M
 
 ## AI Tool Disclosure
 
 AI tools were used during the project to help with planning, explaining unfamiliar concepts, proofreading and troubleshooting.
 
-The final project structure, database design, testing and submitted work were reviewed by me before submission.
+The final project structure, database design, testing and submitted work were reviewed by me before submission...
 
+## Database Verification
+
+The file `docs/Database_Verification.sql` contains queries used to check:
+
+- That all six RaceDay tables exist
+- The number of sample records in each table
+- The foreign key relationships between the tables
+
+These queries were also used during testing in SQL Server Management Studio.
+
+The main relationships in the ERD are:
+
+- One Organiser can create many Events
+- One Participant can have many Enrolments
+- One Event can have many EventCategories
+- One Category can be used in many EventCategories
+- One EventCategory can have many Enrolments
+- One Enrolment can have zero or one Result
