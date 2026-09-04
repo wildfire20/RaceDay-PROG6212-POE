@@ -27,10 +27,10 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
 MDN Web Docs. HTTP response status codes.
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 
-Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube, 2022.
+Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes.... YouTube, 2022.
 https://www.youtube.com/watch?v=XLQxfpDmqbM
 
-## GitHub and CI/CD
+## GitHub and CI/CD...
 
 GitHub Docs. Workflow syntax for GitHub Actions.
 https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
@@ -38,5 +38,5 @@ https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-synt
 GitHub Docs. Quickstart for GitHub Actions.
 https://docs.github.com/en/actions/get-started/quickstart
 
-Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube.
+Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes YouTube.
 https://www.youtube.com/watch?v=XLQxfpDmqbM
