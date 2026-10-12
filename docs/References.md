@@ -1,42 +1,162 @@
-# References
+# \# References
 
-These are the main sources I used while planning and building Part 1 of RaceDay.
+# 
 
-## ERD and Database Design
+# These are the main sources I used while planning and developing the RaceDay project.
 
-Mermaid. Entity Relationship Diagrams.
-https://mermaid.js.org/syntax/entityRelationshipDiagram.html
+# 
 
-Decomplexify. Entity Relationship Diagrams. YouTube, 2024.
-https://www.youtube.com/watch?v=LowjDtiNlk4
+# \## Part 1 - Planning and Database Design
 
-Microsoft Learn. Create tables (Database Engine) - SQL Server.
-https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-tables-database-engine
+# 
 
-Microsoft Learn. Create Foreign Key Relationships - SQL Server.
-https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships
+# \### ERD and Database Design
 
-Microsoft Learn. Unique constraints and check constraints - SQL Server.
-https://learn.microsoft.com/en-us/sql/relational-databases/tables/unique-constraints-and-check-constraints
+# 
 
-## REST API Planning
+# Mermaid. Entity Relationship Diagrams.
 
-MDN Web Docs. HTTP request methods.
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
+# 
 
-MDN Web Docs. HTTP response status codes.
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+# Decomplexify. Entity Relationship Diagrams. YouTube.
 
-Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes....... YouTube, 2022.
-https://www.youtube.com/watch?v=XLQxfpDmqbM
+# 
 
-## GitHub and CI/CD...
+# Microsoft Learn. Create tables (Database Engine) - SQL Server.
 
-GitHub Docs. Workflow syntax for GitHub Actions.
-https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
+# 
 
-GitHub Docs. Quickstart for GitHub Actions.
-https://docs.github.com/en/actions/get-started/quickstart
+# Microsoft Learn. Create Foreign Key Relationships - SQL Server.
 
-Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes YouTube.
-https://www.youtube.com/watch?v=XLQxfpDmqbM
+# 
+
+# Microsoft Learn. Unique constraints and check constraints - SQL Server.
+
+# 
+
+# \### REST API Planning
+
+# 
+
+# MDN Web Docs. HTTP request methods.
+
+# 
+
+# MDN Web Docs. HTTP response status codes.
+
+# 
+
+# Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube.
+
+# 
+
+# \### GitHub and CI/CD
+
+# 
+
+# GitHub Docs. Workflow syntax for GitHub Actions.
+
+# 
+
+# GitHub Docs. Quickstart for GitHub Actions.
+
+# 
+
+# \## Part 2 - RESTful API Development
+
+# 
+
+# \### ASP.NET Core Web API
+
+# 
+
+# Microsoft Learn. Create web APIs with ASP.NET Core.
+
+# 
+
+# Microsoft Learn. Tutorial: Create a controller-based web API with ASP.NET Core.
+
+# 
+
+# These sources helped me understand API controllers, routes, HTTP actions and responses used in RaceDay.
+
+# 
+
+# \### Entity Framework Core and SQL Server
+
+# 
+
+# Microsoft Learn. Microsoft SQL Server Database Provider - Entity Framework Core.
+
+# 
+
+# Microsoft Learn. Migrations Overview - Entity Framework Core.
+
+# 
+
+# These sources were used while connecting the RaceDay API to SQL Server and creating the Part 2 database using Code First migrations.
+
+# 
+
+# \### Authentication and Sessions
+
+# 
+
+# Microsoft Learn. Session and state management in ASP.NET Core.
+
+# 
+
+# Microsoft Learn. PasswordHasher<TUser> Class.
+
+# 
+
+# These sources helped with storing login sessions and hashing passwords instead of saving plain-text passwords.
+
+# 
+
+# \### Swagger and API Testing
+
+# 
+
+# Microsoft Learn. ASP.NET Core web API documentation with Swagger / OpenAPI.
+
+# 
+
+# Swagger was used to view and manually test the RaceDay API endpoints during development.
+
+# 
+
+# \### Automated Testing
+
+# 
+
+# Microsoft Learn. Integration tests in ASP.NET Core.
+
+# 
+
+# Microsoft Learn. Testing without the database - Entity Framework Core.
+
+# 
+
+# xUnit. Getting Started with xUnit.net.
+
+# 
+
+# These sources helped with the automated tests for authentication, role restrictions, events and enrolments.
+
+# 
+
+# \### GitHub Actions
+
+# 
+
+# GitHub Docs. Building and testing .NET.
+
+# 
+
+# GitHub Docs. Workflow syntax for GitHub Actions.
+
+# 
+
+# These sources were used when creating the Part 2 workflow that automatically restores, builds and tests the RaceDay solution.
+
