@@ -204,3 +204,152 @@ The main relationships in the ERD are:
 - One Category can be used in many EventCategories
 - One EventCategory can have many Enrolments
 - One Enrolment can have zero or one Result
+
+## Part 2 - RESTful API Development
+
+Part 2 continues from the planning completed in Part 1. In this part, I implemented the RaceDay REST API using ASP.NET Core Web API, Entity Framework Core and SQL Server.
+
+The API follows the database structure and endpoint plan created in Part 1.
+
+### Technologies Used
+
+- C#
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
+- Swagger
+- xUnit
+- GitHub Actions
+
+### Part 2 Database
+
+Entity Framework Core Code First was used to create the Part 2 database.
+
+The database is called:
+
+`RaceDayPart2DB`
+
+The main tables are:
+
+- Users
+- Events
+- Categories
+- EventCategories
+- Enrolments
+- Results
+
+EF Core migrations are stored inside the `RaceDay.Api` project.
+
+### Authentication and Roles
+
+RaceDay uses two roles:
+
+**Organiser**
+
+An Organiser can:
+
+- Create, update and delete their events
+- Create categories
+- Assign categories to their events
+- View Participant enrolments
+- Capture race results
+- Publish race results
+
+**Participant**
+
+A Participant can:
+
+- Register and log in
+- View available events
+- View event categories
+- Enrol in events
+- View their own enrolments
+- View published race results
+- View and update their profile
+
+Passwords are stored as hashes rather than plain text.
+
+The API uses server-side sessions to keep track of the logged-in user and their role.
+
+### API Functionality
+
+The Part 2 API includes endpoints for:
+
+- Registration
+- Login and logout
+- User profiles
+- Events
+- Categories
+- Event categories
+- Event enrolments
+- Race results
+
+Role restrictions are enforced by the API. For example, Participants cannot create events and Organisers cannot use Participant-only enrolment functionality.
+
+### Swagger
+
+Swagger is included in the project to display and test the RaceDay API endpoints.
+
+To run the API:
+
+1. Open the RaceDay project.
+2. Make sure SQL Server is running.
+3. Run:
+
+`dotnet run --project RaceDay.Api`
+
+4. Open the Swagger address shown in the terminal.
+
+For example:
+
+`http://localhost:5287/swagger`
+
+The port number may change depending on the local environment.
+
+### Automated Tests
+
+Automated tests are stored in:
+
+`RaceDay.Api.Tests`
+
+The project currently contains 9 automated tests covering:
+
+- Successful registration
+- Password hashing
+- Successful login
+- Incorrect password rejection
+- Unauthenticated profile access
+- Organiser event creation
+- Participant rejection from Organiser endpoints
+- Participant event enrolment
+- Enrolment persistence
+
+All 9 tests pass locally.
+
+Tests can be run using:
+
+`dotnet test RaceDay.slnx`
+
+### Part 2 CI/CD
+
+The GitHub Actions workflow for Part 2 is stored in:
+
+`.github/workflows/part2-ci.yml`
+
+The workflow automatically:
+
+- Restores project dependencies
+- Builds the RaceDay solution
+- Runs the automated tests
+
+The latest Part 2 workflow completed successfully with a green build.
+
+![RaceDay Part 2 CI/CD Green Build](docs/Part2_CI_Green_Build.png)
+
+### Part 2 Video Presentation
+
+The Part 2 video demonstrates the API, authentication, role restrictions, Swagger, database functionality, automated tests and GitHub Actions.
+
+YouTube Video Link:
+
+`To be added after recording`
