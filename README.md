@@ -352,4 +352,4 @@ The Part 2 video demonstrates the API, authentication, role restrictions, Swagge
 
 YouTube Video Link:
 
-`To be added after recording`
+https://youtu.be/4oi03TqbXBQ
