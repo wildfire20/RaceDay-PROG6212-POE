@@ -233,4 +233,76 @@ public class ResultsController : ControllerBase
 
         return Ok(results);
     }
+    // Organiser only: view results for own event
+    [HttpGet("events/{eventId:int}/results")]
+    public async Task<IActionResult> GetEventResults(int eventId)
+    {
+        int? userId = HttpContext.Session.GetInt32("UserId");
+        string? role = HttpContext.Session.GetString("Role");
+
+        if (userId == null)
+        {
+            return Unauthorized(new
+            {
+                message = "You must log in first."
+            });
+        }
+
+        if (role != "Organiser")
+        {
+            return StatusCode(403, new
+            {
+                message = "Only Organisers can view event results."
+            });
+        }
+
+        var raceEvent = await _context.Events
+            .AsNoTracking()
+            .FirstOrDefaultAsync(e => e.EventId == eventId);
+
+        if (raceEvent == null)
+        {
+            return NotFound(new
+            {
+                message = "Event not found."
+            });
+        }
+
+        if (raceEvent.OrganiserId != userId.Value)
+        {
+            return StatusCode(403, new
+            {
+                message = "You can only view results for your own events."
+            });
+        }
+
+        var results = await _context.Results
+            .AsNoTracking()
+            .Where(r =>
+                r.Enrolment!.EventCategory!.EventId == eventId)
+            .Select(r => new
+            {
+                r.ResultId,
+                r.EnrolmentId,
+                r.FinishTime,
+                r.FinishingPosition,
+                r.IsPublished,
+                r.RecordedAt,
+
+                ParticipantId =
+                    r.Enrolment!.ParticipantId,
+
+                ParticipantFirstName =
+                    r.Enrolment.Participant!.FirstName,
+
+                ParticipantLastName =
+                    r.Enrolment.Participant.LastName,
+
+                CategoryName =
+                    r.Enrolment.EventCategory!.Category!.Name
+            })
+            .ToListAsync();
+
+        return Ok(results);
+    }
 }

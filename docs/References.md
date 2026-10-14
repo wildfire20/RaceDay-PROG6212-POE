@@ -1,162 +1,91 @@
-# \# References
+# References
 
-# 
+These are the main sources I used while planning and developing the RaceDay project.
 
-# These are the main sources I used while planning and developing the RaceDay project.
+## Part 1 - Planning and Database Design
 
-# 
+### ERD and Database Design
 
-# \## Part 1 - Planning and Database Design
+Mermaid. Entity Relationship Diagrams.  
+https://mermaid.js.org/syntax/entityRelationshipDiagram.html
 
-# 
+Decomplexify. Entity Relationship Diagrams. YouTube.  
+https://www.youtube.com/watch?v=LowjDtiNlk4
 
-# \### ERD and Database Design
+Microsoft Learn. Create tables - SQL Server.  
+https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-tables-database-engine
 
-# 
+Microsoft Learn. Create Foreign Key Relationships - SQL Server.  
+https://learn.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships
 
-# Mermaid. Entity Relationship Diagrams.
+Microsoft Learn. Unique constraints and check constraints - SQL Server.  
+https://learn.microsoft.com/en-us/sql/relational-databases/tables/unique-constraints-and-check-constraints
 
-# 
+### REST API Planning
 
-# Decomplexify. Entity Relationship Diagrams. YouTube.
+MDN Web Docs. HTTP request methods.  
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
 
-# 
+MDN Web Docs. HTTP response status codes.  
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 
-# Microsoft Learn. Create tables (Database Engine) - SQL Server.
+Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube.  
+https://www.youtube.com/watch?v=XLQxfpDmqbM
 
-# 
+### GitHub and CI/CD
 
-# Microsoft Learn. Create Foreign Key Relationships - SQL Server.
+GitHub Docs. Workflow syntax for GitHub Actions.  
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 
-# 
+GitHub Docs. Quickstart for GitHub Actions.  
+https://docs.github.com/en/actions/get-started/quickstart
 
-# Microsoft Learn. Unique constraints and check constraints - SQL Server.
+## Part 2 - RESTful API Development
 
-# 
+### ASP.NET Core Web API
 
-# \### REST API Planning
+Microsoft Learn. Create web APIs with ASP.NET Core.  
+https://learn.microsoft.com/en-us/aspnet/core/web-api/
 
-# 
+Microsoft Learn. Tutorial: Create a controller-based web API with ASP.NET Core.  
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
 
-# MDN Web Docs. HTTP request methods.
+### Entity Framework Core and SQL Server
 
-# 
+Microsoft Learn. Microsoft SQL Server Database Provider - Entity Framework Core.  
+https://learn.microsoft.com/en-us/ef/core/providers/sql-server/
 
-# MDN Web Docs. HTTP response status codes.
+Microsoft Learn. Migrations Overview - Entity Framework Core.  
+https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/
 
-# 
+### Authentication and Sessions
 
-# Code Java. REST API Best Practices: How to Use the Right HTTP Methods and Status Codes. YouTube.
+Microsoft Learn. Session and state management in ASP.NET Core.  
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state
 
-# 
+Microsoft Learn. PasswordHasher<TUser> Class.  
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.identity.passwordhasher-1
 
-# \### GitHub and CI/CD
+### Swagger and API Testing
 
-# 
+Microsoft Learn. ASP.NET Core web API documentation with Swagger / OpenAPI.  
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger
 
-# GitHub Docs. Workflow syntax for GitHub Actions.
+### Automated Testing
 
-# 
+Microsoft Learn. Integration tests in ASP.NET Core.  
+https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests
 
-# GitHub Docs. Quickstart for GitHub Actions.
+Microsoft Learn. Testing Entity Framework Core applications.  
+https://learn.microsoft.com/en-us/ef/core/testing/
 
-# 
+xUnit. Getting Started with xUnit.net.  
+https://xunit.net/docs/getting-started/v3/getting-started
 
-# \## Part 2 - RESTful API Development
+### GitHub Actions
 
-# 
+GitHub Docs. Building and testing .NET.  
+https://docs.github.com/en/actions/how-tos/use-cases-and-examples/building-and-testing/building-and-testing-net
 
-# \### ASP.NET Core Web API
-
-# 
-
-# Microsoft Learn. Create web APIs with ASP.NET Core.
-
-# 
-
-# Microsoft Learn. Tutorial: Create a controller-based web API with ASP.NET Core.
-
-# 
-
-# These sources helped me understand API controllers, routes, HTTP actions and responses used in RaceDay.
-
-# 
-
-# \### Entity Framework Core and SQL Server
-
-# 
-
-# Microsoft Learn. Microsoft SQL Server Database Provider - Entity Framework Core.
-
-# 
-
-# Microsoft Learn. Migrations Overview - Entity Framework Core.
-
-# 
-
-# These sources were used while connecting the RaceDay API to SQL Server and creating the Part 2 database using Code First migrations.
-
-# 
-
-# \### Authentication and Sessions
-
-# 
-
-# Microsoft Learn. Session and state management in ASP.NET Core.
-
-# 
-
-# Microsoft Learn. PasswordHasher<TUser> Class.
-
-# 
-
-# These sources helped with storing login sessions and hashing passwords instead of saving plain-text passwords.
-
-# 
-
-# \### Swagger and API Testing
-
-# 
-
-# Microsoft Learn. ASP.NET Core web API documentation with Swagger / OpenAPI.
-
-# 
-
-# Swagger was used to view and manually test the RaceDay API endpoints during development.
-
-# 
-
-# \### Automated Testing
-
-# 
-
-# Microsoft Learn. Integration tests in ASP.NET Core.
-
-# 
-
-# Microsoft Learn. Testing without the database - Entity Framework Core.
-
-# 
-
-# xUnit. Getting Started with xUnit.net.
-
-# 
-
-# These sources helped with the automated tests for authentication, role restrictions, events and enrolments.
-
-# 
-
-# \### GitHub Actions
-
-# 
-
-# GitHub Docs. Building and testing .NET.
-
-# 
-
-# GitHub Docs. Workflow syntax for GitHub Actions.
-
-# 
-
-# These sources were used when creating the Part 2 workflow that automatically restores, builds and tests the RaceDay solution.
-
+GitHub Docs. Workflow syntax for GitHub Actions.  
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax

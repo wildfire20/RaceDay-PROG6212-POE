@@ -215,4 +215,85 @@ public class EnrolmentsController : ControllerBase
 
         return Ok(enrolments);
     }
+    // Organiser only: update enrolment status
+    [HttpPut("enrolments/{id:int}/status")]
+    public async Task<IActionResult> UpdateEnrolmentStatus(
+        int id,
+        UpdateEnrolmentStatusDto dto)
+    {
+        int? userId = HttpContext.Session.GetInt32("UserId");
+        string? role = HttpContext.Session.GetString("Role");
+
+        if (userId == null)
+        {
+            return Unauthorized(new
+            {
+                message = "You must log in first."
+            });
+        }
+
+        if (role != "Organiser")
+        {
+            return StatusCode(403, new
+            {
+                message = "Only Organisers can update enrolment statuses."
+            });
+        }
+
+        string status = dto.Status.Trim();
+
+        if (status != "Pending" &&
+            status != "Confirmed" &&
+            status != "Cancelled")
+        {
+            return BadRequest(new
+            {
+                message = "Status must be Pending, Confirmed or Cancelled."
+            });
+        }
+
+        var enrolment = await _context.Enrolments
+            .Include(e => e.EventCategory)
+            .FirstOrDefaultAsync(e => e.EnrolmentId == id);
+
+        if (enrolment == null)
+        {
+            return NotFound(new
+            {
+                message = "Enrolment not found."
+            });
+        }
+
+        var raceEvent = await _context.Events
+            .AsNoTracking()
+            .FirstOrDefaultAsync(e =>
+                e.EventId == enrolment.EventCategory!.EventId);
+
+        if (raceEvent == null)
+        {
+            return NotFound(new
+            {
+                message = "Event not found."
+            });
+        }
+
+        if (raceEvent.OrganiserId != userId.Value)
+        {
+            return StatusCode(403, new
+            {
+                message = "You can only update enrolments for your own events."
+            });
+        }
+
+        enrolment.Status = status;
+
+        await _context.SaveChangesAsync();
+
+        return Ok(new
+        {
+            message = "Enrolment status updated successfully.",
+            enrolment.EnrolmentId,
+            enrolment.Status
+        });
+    }
 }
