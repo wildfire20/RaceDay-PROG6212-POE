@@ -512,3 +512,17 @@ The completed RaceDay system now contains:
 10. GitHub Actions CI/CD
 
 Part 3 therefore combines the database planning from Part 1 and the REST API from Part 2 into the final usable RaceDay web application.
+
+### Part 3 Video Presentation
+
+The Part 3 video demonstrates the completed RaceDay web application, including Participant and Organiser functionality, final testing and GitHub Actions.
+
+YouTube Video Link:
+
+### Part 3 Video Presentation
+
+The Part 3 video demonstrates the completed RaceDay web application, including Participant and Organiser functionality, final testing and GitHub Actions.
+
+YouTube Video Link:
+
+https://youtu.be/wY3qcHmEQmY
