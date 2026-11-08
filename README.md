@@ -353,3 +353,162 @@ The Part 2 video demonstrates the API, authentication, role restrictions, Swagge
 YouTube Video Link:
 
 https://youtu.be/4oi03TqbXBQ
+
+## Part 3 - Final Web Application
+
+Part 3 completes the RaceDay Portfolio of Evidence by adding a user-facing web interface to the REST API and database developed in the previous parts.
+
+The final application allows Participants and Organisers to use the RaceDay system through a web browser instead of interacting with the API only through Swagger.
+
+### Technologies Used
+
+The final application uses:
+
+- ASP.NET Core Web API
+- C#
+- Entity Framework Core
+- SQL Server
+- HTML
+- CSS
+- JavaScript
+- Fetch API
+- xUnit
+- GitHub Actions
+
+The frontend is stored inside:
+
+`RaceDay.Api/wwwroot`
+
+The main frontend files are:
+
+- `index.html`
+- `styles.css`
+- `app.js`
+- `participant.js`
+- `organiser.js`
+
+ASP.NET Core serves the frontend and API from the same application. This also allows the existing server-side login session to be used by the web interface.
+
+### Public RaceDay Website
+
+Users who are not logged in can:
+
+- Browse available events
+- View event dates, locations, distances and event types
+- Register for a RaceDay account
+- Log in as a Participant or Organiser
+
+### Participant Functionality
+
+Participants can:
+
+- Register and log in
+- Browse RaceDay events
+- View categories assigned to an event
+- Select a category
+- Enrol in an event
+- View their own enrolments
+- View enrolment statuses
+- View published race results
+- View finishing times and finishing positions
+- View and update their profile
+- Log out
+
+The Participant interface communicates with the existing Part 2 API rather than duplicating database logic in the frontend.
+
+### Organiser Functionality
+
+Organisers can:
+
+- Log in to an Organiser account
+- Create new events
+- Edit their existing events
+- Delete their own events
+- Create categories
+- Assign categories to events
+- Remove categories from events
+- View Participants enrolled in their events
+- View the category selected by each Participant
+- Update enrolment statuses
+- Capture finish times
+- Capture finishing positions
+- Publish results
+- View and update their profile
+- Log out
+
+Role restrictions remain enforced by the API. The frontend does not replace the security rules implemented in Part 2.
+
+### User Interface
+
+The Part 3 interface was designed to provide a simple event-registration experience for both RaceDay user roles.
+
+The interface includes:
+
+- Responsive navigation
+- Event cards
+- Login and registration forms
+- Participant dashboard
+- Organiser dashboard
+- Event management forms
+- Category management
+- Enrolment management
+- Results management
+- Profile editing
+- Responsive layouts for smaller screens
+
+### Running the Final Application
+
+From the main RaceDay project folder, build the solution using:
+
+`dotnet build RaceDay.slnx`
+
+Run the automated tests using:
+
+`dotnet test RaceDay.slnx`
+
+Then open the API project folder:
+
+`cd RaceDay.Api`
+
+Start the application using:
+
+`dotnet run --urls "http://127.0.0.1:5287"`
+
+Open the following address in a browser:
+
+`http://127.0.0.1:5287/`
+
+Swagger is still available during development for API testing.
+
+### Testing
+
+The automated Part 2 test project remains part of the final solution.
+
+The test suite contains 9 automated tests covering authentication, password hashing, role restrictions, event creation, Participant enrolment and persistence.
+
+The final Part 3 solution builds successfully and all 9 automated tests pass.
+
+### CI/CD
+
+The final Part 3 code continues to use the existing GitHub Actions workflows.
+
+After the Part 3 web application was pushed to GitHub, the automated workflows successfully completed with green builds.
+
+This confirms that the final repository structure, API project and automated tests still build successfully after the Part 3 changes.
+
+### Final System
+
+The completed RaceDay system now contains:
+
+1. A SQL Server relational database
+2. Entity Framework Core database integration
+3. A RESTful ASP.NET Core API
+4. Authentication and role-based functionality
+5. Participant functionality
+6. Organiser functionality
+7. A responsive browser-based user interface
+8. Automated testing
+9. GitHub version control
+10. GitHub Actions CI/CD
+
+Part 3 therefore combines the database planning from Part 1 and the REST API from Part 2 into the final usable RaceDay web application.
