@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>RaceDay</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a
+            href="#"
+            class="brand">
+
+            <span class="brand-mark">
+                R
+            </span>
+
+            <span>
+                <strong>RaceDay</strong>
+                <small>Find your next finish line</small>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#events">
+                Events
+            </a>
+
+            <button
+                id="loginButton"
+                class="button button-light">
+                Log in
+            </button>
+
+            <button
+                id="registerButton"
+                class="button button-primary">
+                Register
+            </button>
+
+
+            <div
+                id="accountArea"
+                class="account-area hidden">
+
+                <div>
+                    <strong id="accountName"></strong>
+                    <small id="accountRole"></small>
+                </div>
+
+                <button
+                    id="dashboardButton"
+                    class="button button-light">
+                    Dashboard
+                </button>
+
+                <button
+                    id="logoutButton"
+                    class="button button-danger">
+                    Log out
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    RUN • WALK • CYCLE
+                </span>
+
+                <h1>
+                    Your next race starts here.
+                </h1>
+
+                <p>
+                    Discover events, choose your category,
+                    enrol online and keep track of your
+                    RaceDay results from one place.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#events"
+                        class="button button-primary button-large">
+                        Browse Events
+                    </a>
+
+                    <button
+                        id="heroRegisterButton"
+                        class="button button-outline button-large">
+                        Create Account
+                    </button>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>3</strong>
+                        <span>Event types</span>
+                    </div>
+
+                    <div>
+                        <strong>2</strong>
+                        <span>User roles</span>
+                    </div>
+
+                    <div>
+                        <strong>1</strong>
+                        <span>RaceDay platform</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="race-badge">
+                    RACE DAY
+                </div>
+
+                <h2>
+                    Ready to compete?
+                </h2>
+
+                <p>
+                    Browse running, walking and cycling
+                    events around South Africa.
+                </p>
+
+                <div class="route-line">
+
+                    <span>
+                        START
+                    </span>
+
+                    <div></div>
+
+                    <span>
+                        FINISH
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="events"
+            class="events-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        UPCOMING EVENTS
+                    </span>
+
+                    <h2>
+                        Find your next event
+                    </h2>
+
+                    <p>
+                        Explore RaceDay events currently
+                        available for participants.
+                    </p>
+
+                </div>
+
+                <button
+                    id="refreshEventsButton"
+                    class="button button-light">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div
+                id="eventStatus"
+                class="status-message">
+                Loading events...
+            </div>
+
+            <div
+                id="eventsGrid"
+                class="events-grid">
+            </div>
+
+        </section>
+
+
+        <section
+            id="dashboard"
+            class="dashboard-section hidden">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        MY RACEDAY
+                    </span>
+
+                    <h2 id="dashboardTitle">
+                        Dashboard
+                    </h2>
+
+                    <p id="dashboardMessage">
+                        Your RaceDay account.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                id="dashboardCards"
+                class="dashboard-grid">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <strong>
+            RaceDay
+        </strong>
+
+        <p>
+            PROG6212 Portfolio of Evidence
+        </p>
+
+    </footer>
+
+
+    <!-- Login Modal -->
+
+    <div
+        id="loginModal"
+        class="modal hidden">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                data-close="loginModal">
+                ×
+            </button>
+
+            <span class="eyebrow">
+                WELCOME BACK
+            </span>
+
+            <h2>
+                Log in to RaceDay
+            </h2>
+
+            <p>
+                Enter your RaceDay account details.
+            </p>
+
+            <form id="loginForm">
+
+                <label>
+
+                    Email address
+
+                    <input
+                        id="loginEmail"
+                        type="email"
+                        required>
+
+                </label>
+
+                <label>
+
+                    Password
+
+                    <input
+                        id="loginPassword"
+                        type="password"
+                        required>
+
+                </label>
+
+                <div
+                    id="loginMessage"
+                    class="form-message">
+                </div>
+
+                <button
+                    type="submit"
+                    class="button button-primary button-full">
+                    Log in
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Registration Modal -->
+
+    <div
+        id="registerModal"
+        class="modal hidden">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-card modal-card-large">
+
+            <button
+                class="modal-close"
+                data-close="registerModal">
+                ×
+            </button>
+
+            <span class="eyebrow">
+                JOIN RACEDAY
+            </span>
+
+            <h2>
+                Create your account
+            </h2>
+
+            <p>
+                Register as a Participant or Organiser.
+            </p>
+
+            <form id="registerForm">
+
+                <div class="form-row">
+
+                    <label>
+
+                        First name
+
+                        <input
+                            id="registerFirstName"
+                            type="text"
+                            required>
+
+                    </label>
+
+                    <label>
+
+                        Last name
+
+                        <input
+                            id="registerLastName"
+                            type="text"
+                            required>
+
+                    </label>
+
+                </div>
+
+
+                <label>
+
+                    Email address
+
+                    <input
+                        id="registerEmail"
+                        type="email"
+                        required>
+
+                </label>
+
+
+                <label>
+
+                    Phone number
+
+                    <input
+                        id="registerPhone"
+                        type="tel"
+                        required>
+
+                </label>
+
+
+                <label>
+
+                    Account type
+
+                    <select
+                        id="registerRole"
+                        required>
+
+                        <option value="Participant">
+                            Participant
+                        </option>
+
+                        <option value="Organiser">
+                            Organiser
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    Password
+
+                    <input
+                        id="registerPassword"
+                        type="password"
+                        minlength="6"
+                        required>
+
+                </label>
+
+
+                <div
+                    id="registerMessage"
+                    class="form-message">
+                </div>
+
+                <button
+                    type="submit"
+                    class="button button-primary button-full">
+                    Create Account
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Participant Event Enrolment -->
+
+    <div
+        id="eventEnrolmentModal"
+        class="modal hidden">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                data-close="eventEnrolmentModal">
+                ×
+            </button>
+
+            <span class="eyebrow">
+                EVENT ENTRY
+            </span>
+
+            <h2 id="enrolEventTitle">
+                Event
+            </h2>
+
+            <p id="enrolEventMeta"></p>
+
+            <form id="eventEnrolmentForm">
+
+                <label>
+
+                    Select category
+
+                    <select
+                        id="eventCategorySelect"
+                        required>
+                    </select>
+
+                </label>
+
+                <div
+                    id="eventEnrolmentMessage"
+                    class="form-message">
+                </div>
+
+                <button
+                    type="submit"
+                    class="button button-primary button-full">
+                    Enrol in Event
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Profile Modal -->
+
+    <div
+        id="profileModal"
+        class="modal hidden">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-card modal-card-large">
+
+            <button
+                class="modal-close"
+                data-close="profileModal">
+                ×
+            </button>
+
+            <span class="eyebrow">
+                MY PROFILE
+            </span>
+
+            <h2>
+                RaceDay Profile
+            </h2>
+
+            <form id="profileForm">
+
+                <div class="form-row">
+
+                    <label>
+
+                        First name
+
+                        <input
+                            id="profileFirstName"
+                            type="text"
+                            required>
+
+                    </label>
+
+                    <label>
+
+                        Last name
+
+                        <input
+                            id="profileLastName"
+                            type="text"
+                            required>
+
+                    </label>
+
+                </div>
+
+
+                <label>
+
+                    Email
+
+                    <input
+                        id="profileEmail"
+                        type="email"
+                        readonly>
+
+                </label>
+
+
+                <label>
+
+                    Role
+
+                    <input
+                        id="profileRole"
+                        type="text"
+                        readonly>
+
+                </label>
+
+
+                <label>
+
+                    Phone number
+
+                    <input
+                        id="profilePhone"
+                        type="tel"
+                        required>
+
+                </label>
+
+
+                <div
+                    id="profileMessage"
+                    class="form-message">
+                </div>
+
+                <button
+                    type="submit"
+                    class="button button-primary button-full">
+                    Save Changes
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="participant.js"></script><script src="organiser.js"></script>
+
+</body>
+</html>

@@ -3,7 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using RaceDay.Api.Data;
 using RaceDay.Api.Models;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(
+    new WebApplicationOptions
+    {
+        Args = args,
+        WebRootPath = "wwwroot"
+    });
 
 builder.Services.AddControllers();
 
@@ -34,11 +39,32 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.UseSession();
 
+app.UseStaticFiles();
+
 app.MapControllers();
+
+app.MapGet("/", async context =>
+{
+    string indexPath = Path.Combine(
+        app.Environment.WebRootPath!,
+        "index.html");
+
+    if (!File.Exists(indexPath))
+    {
+        context.Response.StatusCode = 500;
+
+        await context.Response.WriteAsync(
+            $"RaceDay frontend file was not found at: {indexPath}");
+
+        return;
+    }
+
+    context.Response.ContentType = "text/html";
+
+    await context.Response.SendFileAsync(indexPath);
+});
 
 app.Run();
 
